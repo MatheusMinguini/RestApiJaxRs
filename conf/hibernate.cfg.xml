@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+    
+<!--         /home/matheus/.m2/repository/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13-sources.jar -->
+        
+        
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/livraria</property>
+        
+        <!--  The username and password of the database -->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        
+        <!--  The language in which the queries will be written -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+      
+        <!--  It is related to the console, I mean, it is gonna show the query as well as format it -->
+      	<property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        
+        <!--  The framework will take care of the database, in other words, it will be a mirror betwwen the mapping and the database -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <!-- There will be just only 10 connections at time -->
+        <property name="connection.pool_size">10</property>
+         
+         
+    </session-factory>
+</hibernate-configuration>
